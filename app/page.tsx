@@ -512,7 +512,7 @@ export default function AboutPage() {
               Get in Touch
             </h2>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Have questions? We'd love to hear from you.
+              Have questions? We&apos;d love to hear from you.
             </p>
           </motion.div>
 
