@@ -328,48 +328,27 @@ export default function AboutPage() {
             transition={{ duration: 0.4 }}
             className="bg-slate-800 rounded-3xl shadow-2xl p-8 md:p-12 border border-slate-700"
           >
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  {modeFeatures[selectedMode].title}
-                </h3>
-                <p className="text-lg text-slate-300 mb-8 leading-relaxed">
-                  {modeFeatures[selectedMode].description}
-                </p>
-                <ul className="space-y-4">
-                  {modeFeatures[selectedMode].features.map((feature, index) => (
-                    <motion.li
-                      key={feature}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex items-start gap-3"
-                    >
-                      <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                      <span className="text-slate-200">{feature}</span>
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative">
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5 }}
-                  className="bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl p-8 aspect-square flex items-center justify-center"
-                >
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-gradient-to-br from-primary to-cyan-500 rounded-3xl mx-auto mb-6 flex items-center justify-center">
-                      {React.createElement(modes.find((m) => m.id === selectedMode)?.icon || Trophy, {
-                        className: "w-12 h-12 text-white",
-                      })}
-                    </div>
-                    <p className="text-slate-300 font-medium">
-                      {modeFeatures[selectedMode].visual.replace("-", " ")}
-                    </p>
-                  </div>
-                </motion.div>
-              </div>
+            <div>
+              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                {modeFeatures[selectedMode].title}
+              </h3>
+              <p className="text-lg text-slate-300 mb-8 leading-relaxed">
+                {modeFeatures[selectedMode].description}
+              </p>
+              <ul className="space-y-4">
+                {modeFeatures[selectedMode].features.map((feature, index) => (
+                  <motion.li
+                    key={feature}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-slate-200">{feature}</span>
+                  </motion.li>
+                ))}
+              </ul>
             </div>
           </motion.div>
         </div>
